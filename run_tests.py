@@ -259,18 +259,19 @@ def main():
     # Allure 趋势：复制历史后再生成（优化跨平台兼容性）
     copy_allure_history()
 
-    # 优化Allure命令的跨平台兼容性
+    # 生成 Allure 报告（仅在 allure 命令可用时执行）
     allure_results_path = Path('reports') / 'allure-results'
     allure_html_path = Path('reports') / 'html'
 
-    if platform.system() == 'Windows':
-        # Windows下使用allure.bat
-        allure_cmd = f"allure generate \"{allure_results_path}\" -o \"{allure_html_path}\" --clean"
-    else:
-        # macOS/Linux下使用allure
-        allure_cmd = f"allure generate {allure_results_path} -o {allure_html_path} --clean"
+    if shutil.which('allure') is not None:
+        if platform.system() == 'Windows':
+            allure_cmd = f"allure generate \"{allure_results_path}\" -o \"{allure_html_path}\" --clean"
+        else:
+            allure_cmd = f"allure generate {allure_results_path} -o {allure_html_path} --clean"
 
-    run_system(allure_cmd, "生成Allure报告", show_output=False)
+        run_system(allure_cmd, "生成Allure报告", show_output=False)
+    else:
+        logger.info("allure 未安装，跳过本地 Allure 报告生成")
 
     return 0
 
