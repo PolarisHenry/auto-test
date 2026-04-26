@@ -1,5 +1,6 @@
 import os
 import platform
+import shutil
 
 import allure
 import pytest
@@ -77,26 +78,14 @@ def pytest_runtest_makereport(item, call):
                 attachment_type=allure.attachment_type.PNG
             )
 
-            # 视频（根据操作系统使用不同方法）
+            # 视频
             try:
-                if platform.system() == "Windows":
-                    # Windows 使用 save_as 方法
-                    if page.video:
-                        page.close()
-                        final_video_path = videos_dir / f"{item.nodeid.replace('/', '_').replace('::', '__')}.webm"
-                        page.video.save_as(str(final_video_path))
-                        allure.attach.file(
-                            str(final_video_path),
-                            name="失败视频",
-                            attachment_type=allure.attachment_type.WEBM
-                        )
-                else:
-                    # macOS/Linux 使用 path 和 replace 方法
+                if page.video:
                     video_path = page.video.path()
                     page.close()
                     if os.path.exists(video_path):
-                        final_video_path = videos_dir / f"{item.nodeid.replace('/', '_')}.webm"
-                        os.replace(video_path, final_video_path)
+                        final_video_path = videos_dir / f"{item.nodeid.replace('/', '_').replace('::', '__')}.webm"
+                        shutil.move(video_path, str(final_video_path))
                         allure.attach.file(
                             str(final_video_path),
                             name="失败视频",
