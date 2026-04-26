@@ -21,10 +21,11 @@ WECOM_WEBHOOK: str = os.environ.get(
 
 class ENV:
     # 测试
-    test = os.environ.get('BASE_URL', 'http://localhost:3100')
+    # test = os.environ.get('BASE_URL', 'http://localhost:3100')
+    test = 'http://192.168.1.19:3100'
 
     # 线上
-    online = os.environ.get('BASE_URL', 'http://localhost:3100')
+    # online = os.environ.get('BASE_URL', 'http://localhost:3100')
 
 
 class ACCOUNT:

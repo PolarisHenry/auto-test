@@ -47,4 +47,4 @@ class TestUser:
     def test_delete_non_existent_users(self, login_page: LoginPage, user_page: UserPage):
         with allure.step("删除不存在的用户"):
             user_page.add_user('UI 自动化测试', '16108045@qq.com', '12345')
-            # user_page.del_user_faild('UI 自动化测试')
+            user_page.del_user_faild('UI 自动化测试')
