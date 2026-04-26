@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"失败用例查看报告的截图和视频","6460","删除不存在的用户","tests.ui","2025-10-05","failed","2025-10-05","TestUser","test_user_ui","",""
+"添加用户，断言添加成功，把添加的用户删除，断言删除成功","113","添加删除用户","tests.api","2025-10-05","passed","2025-10-05","TestUser","test_user","",""
+"测试添加和删除用户数据","2225","添加和删除用户","tests.ui","2025-10-05","passed","2025-10-05","TestUser","test_user_ui","",""

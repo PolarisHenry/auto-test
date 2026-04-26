@@ -1,0 +1,349 @@
+2025-10-05 10:41:35.017 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:35.062 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:41:35.062 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:41:35.062 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:41:35.062 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_add_user
+2025-10-05 10:41:35.063 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:35.070 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:41:35.070 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:41:35.070 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:41:35.070 | INFO     | src.core.http_client:request:19 - 请求方法: POST, 请求URL: http://localhost:3100/api/v1/user/create, 请求参数: {'params': {}, 'data': {}, 'json': {'email': 'test@qq.com', 'username': 'ceshi', 'password': '123456', 'is_active': 1, 'is_superuser': False, 'role_ids': [], 'dept_id': 0}, 'files': {}}
+2025-10-05 10:41:35.158 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Created Successfully","data":null}
+2025-10-05 10:41:35.158 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Created Successfully
+2025-10-05 10:41:35.158 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/user/list, 请求参数: {'params': {'page': 1, 'page_size': 10, 'username': 'ceshi', 'email': '', 'dept_id': None}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:35.165 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":null,"data":[{"id":9554,"email":"test@qq.com","username":"ceshi","last_login":null,"updated_at":"2025-10-05 10:41:35","is_superuser":false,"created_at":"2025-10-05 10:41:35","is_active":true,"alias":null,"phone":null,"roles":[],"dept":{}}],"total":1,"page":1,"page_size":10}
+2025-10-05 10:41:35.165 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].id, [搜索结果] 9554
+2025-10-05 10:41:35.166 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].email, [搜索结果] test@qq.com
+2025-10-05 10:41:35.166 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].username, [搜索结果] ceshi
+2025-10-05 10:41:35.166 | INFO     | src.core.http_client:request:19 - 请求方法: DELETE, 请求URL: http://localhost:3100/api/v1/user/delete, 请求参数: {'params': {'user_id': 9554}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:35.172 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Deleted Successfully","data":null}
+2025-10-05 10:41:35.172 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Deleted Successfully
+2025-10-05 10:41:35.173 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 10:41:35.181 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_add_user
+2025-10-05 10:41:36.342 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_user[chromium]
+2025-10-05 10:41:37.127 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 10:41:37.153 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:37.193 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:41:37.193 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:41:37.193 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:41:37.365 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 10:41:37.367 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:41:37.943 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:41:37.961 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:41:37.973 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 10:41:37.982 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:37.990 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:37.990 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:41:38.302 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:41:38.302 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:41:38.338 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:41:38.455 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:41:38.496 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:41:38.496 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 10:41:38.840 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 10:41:38.841 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 10:41:38.944 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 10:41:38.980 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 10:41:38.980 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 10:41:39.178 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 10:41:39.286 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '删除成功' 的元素可见
+2025-10-05 10:41:39.286 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:41:39.317 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:41:39.325 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: '需要执行 db 删除的 user'
+2025-10-05 10:41:39.333 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108046@qq.com'
+2025-10-05 10:41:39.340 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:39.349 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:39.349 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:41:39.657 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:41:39.657 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:41:39.686 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:41:39.690 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:41:39.690 | INFO     | src.core.db_client:delete:294 - 数据库：localhost:3306:fastapi_admin，当前执行sql为：DELETE FROM user WHERE username='需要执行 db 删除的 user'
+2025-10-05 10:41:39.723 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_user[chromium]
+2025-10-05 10:41:39.725 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_delete_non_existent_users[chromium]
+2025-10-05 10:41:40.075 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 10:41:40.076 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:41:40.086 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:41:40.086 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:41:40.086 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:41:40.294 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 10:41:40.295 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:41:40.862 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:41:40.871 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:41:40.881 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 10:41:40.892 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:40.900 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:41:40.900 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:41:41.210 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:41:41.210 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:41:41.244 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:41:41.387 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:41:41.398 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:41:41.398 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 10:41:41.622 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 10:41:41.622 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 10:41:41.724 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 10:41:41.754 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 10:41:41.755 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 10:41:41.952 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 10:41:46.957 | ERROR    | src.pages.base_page:assert_ele_visible_by_txt:258 - 断言失败：文本为 '删除失败' 的元素不可见，原因： Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for get_by_text("删除失败")
+
+2025-10-05 10:41:47.108 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_delete_non_existent_users[chromium]
+2025-10-05 10:43:20.323 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:20.341 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:43:20.341 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:43:20.341 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:43:20.342 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_add_user
+2025-10-05 10:43:20.343 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:20.348 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:43:20.348 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:43:20.348 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:43:20.348 | INFO     | src.core.http_client:request:19 - 请求方法: POST, 请求URL: http://localhost:3100/api/v1/user/create, 请求参数: {'params': {}, 'data': {}, 'json': {'email': 'test@qq.com', 'username': 'ceshi', 'password': '123456', 'is_active': 1, 'is_superuser': False, 'role_ids': [], 'dept_id': 0}, 'files': {}}
+2025-10-05 10:43:20.438 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Created Successfully","data":null}
+2025-10-05 10:43:20.438 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Created Successfully
+2025-10-05 10:43:20.438 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/user/list, 请求参数: {'params': {'page': 1, 'page_size': 10, 'username': 'ceshi', 'email': '', 'dept_id': None}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:20.445 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":null,"data":[{"id":9558,"email":"test@qq.com","username":"ceshi","last_login":null,"updated_at":"2025-10-05 10:43:20","is_superuser":false,"created_at":"2025-10-05 10:43:20","is_active":true,"alias":null,"phone":null,"roles":[],"dept":{}}],"total":1,"page":1,"page_size":10}
+2025-10-05 10:43:20.445 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].id, [搜索结果] 9558
+2025-10-05 10:43:20.445 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].email, [搜索结果] test@qq.com
+2025-10-05 10:43:20.445 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].username, [搜索结果] ceshi
+2025-10-05 10:43:20.445 | INFO     | src.core.http_client:request:19 - 请求方法: DELETE, 请求URL: http://localhost:3100/api/v1/user/delete, 请求参数: {'params': {'user_id': 9558}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:20.451 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Deleted Successfully","data":null}
+2025-10-05 10:43:20.451 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Deleted Successfully
+2025-10-05 10:43:20.451 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 10:43:20.460 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_add_user
+2025-10-05 10:43:21.365 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_user[chromium]
+2025-10-05 10:43:22.030 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 10:43:22.031 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:22.041 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:43:22.041 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:43:22.041 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:43:22.269 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 10:43:22.271 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:43:22.836 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:43:22.852 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:43:22.862 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 10:43:22.871 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:22.879 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:22.879 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:43:23.189 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:43:23.190 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:43:23.224 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:43:23.360 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:43:23.377 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:43:23.377 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 10:43:23.647 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 10:43:23.647 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 10:43:23.751 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 10:43:23.782 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 10:43:23.782 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 10:43:23.980 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 10:43:24.086 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '删除成功' 的元素可见
+2025-10-05 10:43:24.086 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:43:24.121 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:43:24.127 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: '需要执行 db 删除的 user'
+2025-10-05 10:43:24.135 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108046@qq.com'
+2025-10-05 10:43:24.143 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:24.152 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:24.152 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:43:24.462 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:43:24.462 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:43:24.488 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:43:24.492 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:43:24.492 | INFO     | src.core.db_client:delete:294 - 数据库：localhost:3306:fastapi_admin，当前执行sql为：DELETE FROM user WHERE username='需要执行 db 删除的 user'
+2025-10-05 10:43:24.542 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_user[chromium]
+2025-10-05 10:43:24.544 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_delete_non_existent_users[chromium]
+2025-10-05 10:43:24.920 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 10:43:24.922 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 10:43:24.930 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 10:43:24.930 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 10:43:24.930 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 10:43:25.165 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 10:43:25.166 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 10:43:25.671 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 10:43:25.681 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:43:25.689 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 10:43:25.723 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:25.735 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 10:43:25.735 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 10:43:26.048 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 10:43:26.048 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 10:43:26.084 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 10:43:26.224 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 10:43:26.234 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 10:43:26.234 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 10:43:26.467 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 10:43:26.467 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 10:43:26.570 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 10:43:26.598 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 10:43:26.599 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 10:43:26.619 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 10:43:31.624 | ERROR    | src.pages.base_page:assert_ele_visible_by_txt:258 - 断言失败：文本为 '删除失败' 的元素不可见，原因： Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for get_by_text("删除失败")
+
+2025-10-05 10:43:31.776 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_delete_non_existent_users[chromium]
+2025-10-05 11:07:46.093 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:07:46.111 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:07:46.111 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:07:46.111 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:07:46.112 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_add_user
+2025-10-05 11:07:46.116 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:07:46.126 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:07:46.126 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:07:46.127 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:07:46.127 | INFO     | src.core.http_client:request:19 - 请求方法: POST, 请求URL: http://localhost:3100/api/v1/user/create, 请求参数: {'params': {}, 'data': {}, 'json': {'email': 'test@qq.com', 'username': 'ceshi', 'password': '123456', 'is_active': 1, 'is_superuser': False, 'role_ids': [], 'dept_id': 0}, 'files': {}}
+2025-10-05 11:07:46.202 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Created Successfully","data":null}
+2025-10-05 11:07:46.203 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Created Successfully
+2025-10-05 11:07:46.203 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/user/list, 请求参数: {'params': {'page': 1, 'page_size': 10, 'username': 'ceshi', 'email': '', 'dept_id': None}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:07:46.211 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":null,"data":[{"id":10825,"email":"test@qq.com","username":"ceshi","last_login":null,"updated_at":"2025-10-05 11:07:46","is_superuser":false,"created_at":"2025-10-05 11:07:46","is_active":true,"alias":null,"phone":null,"roles":[],"dept":{}}],"total":1,"page":1,"page_size":10}
+2025-10-05 11:07:46.211 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].id, [搜索结果] 10825
+2025-10-05 11:07:46.211 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].email, [搜索结果] test@qq.com
+2025-10-05 11:07:46.211 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].username, [搜索结果] ceshi
+2025-10-05 11:07:46.211 | INFO     | src.core.http_client:request:19 - 请求方法: DELETE, 请求URL: http://localhost:3100/api/v1/user/delete, 请求参数: {'params': {'user_id': 10825}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:07:46.220 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Deleted Successfully","data":null}
+2025-10-05 11:07:46.221 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Deleted Successfully
+2025-10-05 11:07:46.221 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 11:07:46.228 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_add_user
+2025-10-05 11:10:39.512 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:10:39.549 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:10:39.549 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:10:39.549 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:10:39.550 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_add_user
+2025-10-05 11:10:39.551 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:10:39.557 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:10:39.558 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:10:39.558 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:10:39.558 | INFO     | src.core.http_client:request:19 - 请求方法: POST, 请求URL: http://localhost:3100/api/v1/user/create, 请求参数: {'params': {}, 'data': {}, 'json': {'email': 'test@qq.com', 'username': 'ceshi', 'password': '123456', 'is_active': 1, 'is_superuser': False, 'role_ids': [], 'dept_id': 0}, 'files': {}}
+2025-10-05 11:10:39.630 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Created Successfully","data":null}
+2025-10-05 11:10:39.630 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Created Successfully
+2025-10-05 11:10:39.630 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/user/list, 请求参数: {'params': {'page': 1, 'page_size': 10, 'username': 'ceshi', 'email': '', 'dept_id': None}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:10:39.640 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":null,"data":[{"id":10826,"email":"test@qq.com","username":"ceshi","last_login":null,"updated_at":"2025-10-05 11:10:39","is_superuser":false,"created_at":"2025-10-05 11:10:39","is_active":true,"alias":null,"phone":null,"roles":[],"dept":{}}],"total":1,"page":1,"page_size":10}
+2025-10-05 11:10:39.640 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].id, [搜索结果] 10826
+2025-10-05 11:10:39.640 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].email, [搜索结果] test@qq.com
+2025-10-05 11:10:39.640 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: data[0].username, [搜索结果] ceshi
+2025-10-05 11:10:39.640 | INFO     | src.core.http_client:request:19 - 请求方法: DELETE, 请求URL: http://localhost:3100/api/v1/user/delete, 请求参数: {'params': {'user_id': 10826}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:10:39.648 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"Deleted Successfully","data":null}
+2025-10-05 11:10:39.648 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] Deleted Successfully
+2025-10-05 11:10:39.648 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 11:10:39.653 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_add_user
+2025-10-05 11:14:39.337 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_user[chromium]
+2025-10-05 11:14:40.072 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 11:14:40.074 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:14:40.134 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-04 11:04:19","updated_at":"2025-10-04 11:06:08","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:14:40.134 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:14:40.135 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:14:40.324 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 11:14:40.326 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 11:14:40.882 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 11:14:40.907 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:14:40.994 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 11:14:41.014 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 11:14:41.023 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 11:14:41.023 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 11:14:41.214 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 11:14:41.214 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 11:14:41.250 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 11:14:42.125 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 11:14:42.136 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:14:42.136 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 11:14:42.188 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 11:14:42.188 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 11:14:42.291 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 11:14:42.325 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 11:14:42.325 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 11:14:42.523 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 11:14:42.632 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '删除成功' 的元素可见
+2025-10-05 11:14:42.632 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 11:14:42.665 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 11:14:42.673 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: '需要执行 db 删除的 user'
+2025-10-05 11:14:42.682 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108046@qq.com'
+2025-10-05 11:14:42.690 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 11:14:42.698 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 11:14:42.699 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 11:14:43.004 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 11:14:43.004 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 11:14:43.031 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 11:14:43.035 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 11:14:43.035 | INFO     | src.core.db_client:delete:294 - 数据库：localhost:3306:fastapi_admin，当前执行sql为：DELETE FROM user WHERE username='需要执行 db 删除的 user'
+2025-10-05 11:14:43.036 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 11:14:43.103 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_user[chromium]
+2025-10-05 11:18:19.828 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_user[chromium]
+2025-10-05 11:18:20.565 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 11:18:20.566 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:18:20.582 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-05 11:17:02","updated_at":"2025-10-05 11:17:02","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:18:20.583 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:18:20.583 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:18:20.825 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 11:18:20.826 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 11:18:21.376 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 11:18:21.394 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:18:21.406 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 11:18:21.417 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:21.426 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:21.426 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 11:18:21.743 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 11:18:21.744 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 11:18:21.787 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 11:18:21.907 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 11:18:21.925 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:18:21.925 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 11:18:22.288 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 11:18:22.288 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 11:18:22.390 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 11:18:22.419 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 11:18:22.419 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 11:18:22.617 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 11:18:22.725 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '删除成功' 的元素可见
+2025-10-05 11:18:22.725 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 11:18:22.759 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 11:18:22.769 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: '需要执行 db 删除的 user'
+2025-10-05 11:18:22.779 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108046@qq.com'
+2025-10-05 11:18:22.790 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:22.800 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:22.801 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 11:18:23.116 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 11:18:23.116 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 11:18:23.141 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 11:18:23.145 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 11:18:23.145 | INFO     | src.core.db_client:delete:294 - 数据库：localhost:3306:fastapi_admin，当前执行sql为：DELETE FROM user WHERE username='需要执行 db 删除的 user'
+2025-10-05 11:18:23.145 | INFO     | src.core.db_client:_ensure_pool_exists:70 - 数据库【localhost:3306:fastapi_admin】连接池初始化成功
+2025-10-05 11:18:23.205 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_user[chromium]
+2025-10-05 11:18:23.206 | INFO     | conftest:log_test_start_and_end:47 - 开始执行测试: test_delete_non_existent_users[chromium]
+2025-10-05 11:18:23.583 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/login
+2025-10-05 11:18:23.584 | INFO     | src.core.http_client:request:19 - 请求方法: GET, 请求URL: http://localhost:3100/api/v1/base/userinfo, 请求参数: {'params': {}, 'data': {}, 'json': {}, 'files': {}}
+2025-10-05 11:18:23.621 | INFO     | src.core.http_client:request:21 - 响应状态码: 200, 响应内容: {"code":200,"msg":"OK","data":{"id":1,"email":"admin@admin.com","username":"admin","last_login":"2025-10-05 11:17:02","updated_at":"2025-10-05 11:17:02","is_superuser":true,"created_at":"2025-09-23 19:24:57","is_active":true,"alias":null,"dept_id":0,"phone":null,"avatar":"https://avatars.githubusercontent.com/u/54677442?v=4"}}
+2025-10-05 11:18:23.622 | INFO     | src.core.http_response:search:28 - [JMESPath搜索] 表达式: msg, [搜索结果] OK
+2025-10-05 11:18:23.622 | INFO     | src.core.http_client:login:90 - 登录状态：OK,请求头Token缓存可用，无需重新登录
+2025-10-05 11:18:23.842 | INFO     | src.pages.base_page:navigate_to:49 - 导航到 URL: http://localhost:3100/system/user
+2025-10-05 11:18:23.844 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='新建用户' 查找元素
+2025-10-05 11:18:24.402 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='新建用户' 的元素
+2025-10-05 11:18:24.415 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:18:24.424 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入邮箱]' 的元素中输入文本: '16108045@qq.com'
+2025-10-05 11:18:24.454 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请输入密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:24.467 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 '.n-form input[placeholder=请确认密码]' 的元素中输入文本: '12345'
+2025-10-05 11:18:24.467 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='checkbox' 和 name='普通用户' 查找元素
+2025-10-05 11:18:24.776 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='checkbox' 和 name='普通用户' 的元素
+2025-10-05 11:18:24.776 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='保存' 查找元素
+2025-10-05 11:18:24.811 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='保存' 的元素
+2025-10-05 11:18:24.926 | INFO     | src.pages.base_page:assert_ele_visible_by_txt:254 - 断言：文本为 '新增成功' 的元素可见
+2025-10-05 11:18:24.941 | INFO     | src.pages.base_page:input_by_css:150 - 在 CSS 选择器为 'input[placeholder=请输入用户名称]' 的元素中输入文本: 'UI 自动化测试'
+2025-10-05 11:18:24.941 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='搜索' 查找元素
+2025-10-05 11:18:25.196 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='搜索' 的元素
+2025-10-05 11:18:25.196 | INFO     | src.pages.base_page:sleep:61 - 页面等待100ms
+2025-10-05 11:18:25.300 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='删除' 查找元素
+2025-10-05 11:18:25.326 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='删除' 的元素
+2025-10-05 11:18:25.327 | INFO     | src.pages.base_page:locator_by_role:100 - 通过 role='button' 和 name='确认' 查找元素
+2025-10-05 11:18:25.348 | INFO     | src.pages.base_page:click_ele_by_role:138 - 点击 role='button' 和 name='确认' 的元素
+2025-10-05 11:18:30.351 | ERROR    | src.pages.base_page:assert_ele_visible_by_txt:258 - 断言失败：文本为 '删除失败' 的元素不可见，原因： Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for get_by_text("删除失败")
+
+2025-10-05 11:18:30.546 | INFO     | conftest:log_test_end:50 - 测试执行完成: test_delete_non_existent_users[chromium]

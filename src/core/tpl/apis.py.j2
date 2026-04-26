@@ -1,0 +1,75 @@
+# This file is auto-generated from API database
+from src.core.http_response import CustomResponse
+
+class ApiMixin{{ mixin_index }}:
+    """
+    API mixin {{ mixin_index }}
+    """
+
+    def request(self):
+        pass
+
+{% for api in chunk %}
+    def {{ api.function_name }}(self,{{ api.params_str }}**kw) -> CustomResponse:
+        """
+        接口名：{{ api.title }}
+        url: {{ api.url }}
+
+        Args:
+        {{ api.params_doc }}
+            kw: 额外参数，如 raw_method, raw_params: 路径参数一般是get请求, raw_data: 表单参数, raw_json: json格式的参数
+
+        Returns:
+            {{ api.res_body }}
+            response 支持jmespath和re正则提取数据，res.search(expression), res.find_all(pattern), res.find_one(pattern)
+        """
+
+        # 处理路径参数
+        url = "{{ api.url }}"
+        {% if api.path_params %}
+        # 替换路径参数
+        {% for param in api.path_params %}
+        url = url.replace('{' + '{{ param }}' + '}', str({{ param }}))
+        {% endfor %}
+        {% endif %}
+        
+        method = "{{ api.method.upper() }}"
+        if kw.get('raw_method'):
+            method = kw.get('raw_method').upper()
+
+        params = {
+{%- for param in api.params_names %}
+            "{{ param }}": {{ param }}{%- if not loop.last -%},{%- endif %}
+{%- endfor %}
+        }
+        if kw.get('raw_params'):
+            params = kw.get('raw_params')
+
+        data = {
+{%- for param in api.data_names %}
+            "{{ param }}": {{ param }}{%- if not loop.last -%},{%- endif %}
+{%- endfor %}
+        }
+        if kw.get('raw_data'):
+            data = kw.get('raw_data')
+
+        json_data = {
+{%- for param in api.json_names %}
+            "{{ param }}": {{ param }}{%- if not loop.last -%},{%- endif %}
+{%- endfor %}
+        }
+        if kw.get('raw_json'):
+            json_data = kw.get('raw_json')
+
+        files = {
+{%- for param in api.files_names %}
+            "{{ param }}": {{ param }}{%- if not loop.last -%},{%- endif %}
+{%- endfor %}
+        }
+        if kw.get('raw_files'):
+            files = kw.get('raw_files')
+
+        response = self.request(url=url, method=method, params=params, data=data, json=json_data, files=files)
+        return response
+
+{% endfor %}
