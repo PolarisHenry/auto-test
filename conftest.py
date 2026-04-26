@@ -58,6 +58,7 @@ def log_test_start_and_end(request):
 def pytest_runtest_makereport(item, call):
     """
     在测试阶段结束后，判断是否失败，失败时自动附加截图和视频到 allure 报告。
+    截图在 call 阶段执行（页面可用），视频在 teardown 阶段执行（context 关闭后视频才完整写入）。
     """
     outcome = yield
     rep = outcome.get_result()
@@ -66,10 +67,8 @@ def pytest_runtest_makereport(item, call):
     if rep.when == "call" and rep.failed:
         page = item.funcargs.get("page")  # 依赖 pytest-playwright 提供的 page fixture
         if page:
+            # 截图（call 阶段页面还在，立即截图）
             screenshots_dir = ROOT_PATH / "reports/screenshots"
-            videos_dir = ROOT_PATH / "reports/videos"
-
-            # 截图（文件名兼容 Windows 的 :: 替换）
             screenshot_path = screenshots_dir / f"{item.nodeid.replace('/', '_').replace('::', '__')}.png"
             page.screenshot(path=str(screenshot_path))
             allure.attach.file(
@@ -78,21 +77,28 @@ def pytest_runtest_makereport(item, call):
                 attachment_type=allure.attachment_type.PNG
             )
 
-            # 视频
-            try:
-                if page.video:
-                    video_path = page.video.path()
-                    page.close()
-                    if os.path.exists(video_path):
-                        final_video_path = videos_dir / f"{item.nodeid.replace('/', '_').replace('::', '__')}.webm"
-                        shutil.move(video_path, str(final_video_path))
-                        allure.attach.file(
-                            str(final_video_path),
-                            name="失败视频",
-                            attachment_type=allure.attachment_type.WEBM
-                        )
-            except Exception as e:
-                logger.warning(f"视频处理失败: {e}")
+            # 暂存视频路径，等 teardown 阶段（context 关闭后视频写完了）再处理
+            if page.video:
+                item._video_path = page.video.path()
+
+    if rep.when == "teardown":
+        # 检查 call 阶段是否失败，而非 teardown 本身
+        call_report = getattr(item, "rep_call", None)
+        if call_report and call_report.failed:
+            video_path = getattr(item, "_video_path", None)
+            if video_path and os.path.exists(video_path):
+                videos_dir = ROOT_PATH / "reports/videos"
+                final_video_path = videos_dir / f"{item.nodeid.replace('/', '_').replace('::', '__')}.webm"
+                try:
+                    # 此时 browser context 已关闭，视频文件已完整写入磁盘
+                    shutil.move(video_path, str(final_video_path))
+                    allure.attach.file(
+                        str(final_video_path),
+                        name="失败视频",
+                        attachment_type=allure.attachment_type.WEBM
+                    )
+                except Exception as e:
+                    logger.warning(f"视频处理失败: {e}")
 
 
 # ================= 自定义断言信息 =================
