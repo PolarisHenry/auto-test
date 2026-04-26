@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+logs
+reports
+performance
+JENKINS_CI_GUIDE.md
+README.md
+Dockerfile
+.dockerignore

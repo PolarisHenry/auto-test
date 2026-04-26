@@ -21,23 +21,19 @@ pipeline {
                 }
             }
             steps {
-                dir('auto_test') {
-                    sh '''
-                        python run_tests.py
-                        chown -R 1000:1000 reports/
-                    '''
-                }
+                sh '''
+                    python run_tests.py
+                    chown -R 1000:1000 reports/
+                '''
             }
         }
 
         stage('Generate Allure Report') {
             steps {
-                dir('auto_test') {
-                    script {
-                        allure commandline: 'allure',
-                            includeProperties: false,
-                            results: [[path: 'reports/allure-results']]
-                    }
+                script {
+                    allure commandline: 'allure',
+                        includeProperties: false,
+                        results: [[path: 'reports/allure-results']]
                 }
             }
         }
@@ -45,12 +41,12 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'auto_test/reports/html/**/*', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'auto_test/reports/junit.xml', allowEmptyArchive: true
-            junit testResults: 'auto_test/reports/junit.xml', allowEmptyResults: true
+            archiveArtifacts artifacts: 'reports/html/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/junit.xml', allowEmptyArchive: true
+            junit testResults: 'reports/junit.xml', allowEmptyResults: true
         }
         failure {
-            archiveArtifacts artifacts: 'auto_test/reports/allure-results/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/allure-results/**/*', allowEmptyArchive: true
         }
     }
 }
