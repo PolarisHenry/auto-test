@@ -3,14 +3,14 @@ import allure
 from playwright.sync_api import Page
 
 from src.pages.user import UserPage
-from settings import ENV, ACCOUNT
+from settings import env, ACCOUNT
 from src.pages.login import LoginPage
 
 
 @pytest.fixture()
 def login_page(page: Page):
     """登录 LoginPage"""
-    login_page = LoginPage(page, ENV.test, **ACCOUNT.admin)
+    login_page = LoginPage(page, env.base_url, **ACCOUNT.admin)
     yield login_page
 
 

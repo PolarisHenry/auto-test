@@ -6,7 +6,7 @@ import requests
 from loguru import logger
 
 from src.core.http_response import CustomResponse
-from settings import ACCOUNT, API_DB_PATH, ENV
+from settings import ACCOUNT, API_DB_PATH, env
 from src.apis import AllApiMixin
 from src.core.db_client import MysqlClient, SqliteClient
 
@@ -124,7 +124,7 @@ class HttpClient(AllApiMixin):
 
 
 if __name__ == '__main__':
-    client = HttpClient(ENV.test, **ACCOUNT.admin)
+    client = HttpClient(env.base_url, **ACCOUNT.admin)
     fake = Faker('zh_CN')
 
     username = fake.name()

@@ -20,12 +20,18 @@ WECOM_WEBHOOK: str = os.environ.get(
 )
 
 class ENV:
-    # 测试
-    # test = os.environ.get('BASE_URL', 'http://localhost:3100')
+    # 各环境域名配置（本地开发按需修改地址）
     test = 'http://192.168.1.19:3100'
+    online = 'http://192.168.1.19:3100'
 
-    # 线上
-    # online = os.environ.get('BASE_URL', 'http://localhost:3100')
+    # 当前目标环境：本地改这里切换环境，Jenkins 通过 TARGET_ENV 环境变量注入
+    _target = os.environ.get('TARGET_ENV', 'test')
+
+    @property
+    def base_url(self):
+        """返回当前目标环境的域名（Jenkins 通过 BASE_URL 环境变量可覆盖）"""
+        default = getattr(self, self._target)
+        return os.environ.get('BASE_URL', default)
 
 
 class ACCOUNT:

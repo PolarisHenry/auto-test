@@ -1,8 +1,16 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(
+            name: 'TARGET_ENV',
+            choices: ['test', 'online'],
+            description: '选择测试环境'
+        )
+    }
+
     environment {
-        // Jenkins 容器内通过 host.docker.internal 访问宿主机
+        // Docker 容器内通过 host.docker.internal 访问宿主机上的被测应用
         BASE_URL       = 'http://host.docker.internal:3100'
         DB_HOST        = 'host.docker.internal'
         DB_PORT        = '3306'
