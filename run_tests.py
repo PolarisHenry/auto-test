@@ -235,6 +235,14 @@ def parse_junit_and_summary(junit_path: Path, notify_wecom: bool = True):
     md_lines.append("---")
     md_lines.append("测试执行完成")
 
+    # 附加 Allure 报告链接（仅 Jenkins 环境）
+    try:
+        from settings import ALLURE_REPORT_URL
+        if ALLURE_REPORT_URL:
+            md_lines.append(f"\n[查看 Allure 报告]({ALLURE_REPORT_URL})")
+    except Exception:
+        pass
+
     send_wecom_markdown("\n".join(md_lines))
 
 

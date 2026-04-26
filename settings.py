@@ -59,6 +59,12 @@ class DB:
     }
 
 
+# Allure 报告地址（仅在 Jenkins 环境中自动获取，本地运行时为 None）
+_JENKINS_URL = os.environ.get('JENKINS_URL', '')
+_JOB_NAME = os.environ.get('JOB_NAME', '')
+ALLURE_REPORT_URL = f"{_JENKINS_URL}job/{_JOB_NAME}/allure/" if _JENKINS_URL and _JOB_NAME else None
+
+
 env = ENV()
 account = ACCOUNT()
 
