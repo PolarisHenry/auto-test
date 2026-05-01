@@ -190,7 +190,6 @@ def parse_junit_and_summary(junit_path: Path, notify_wecom: bool = True):
     api_rate, api_exec = _calc_rate(api_tests)
     ui_rate, ui_exec = _calc_rate(ui_tests)
 
-    # 名称映射与顺序：up=打单王，bg=分销王；up 优先
     title_lines = []
     title_lines.append("自动化测试通过率统计")
 
